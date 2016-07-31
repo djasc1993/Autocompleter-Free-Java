@@ -5,7 +5,8 @@ This is the small library built for java swings developers who may need the auto
 
 MAutoCompleter is easy to use and have all required functionality for the developer.
 
-Library(jar file) found in dist/ folder. Just download the jar, add to the built path and code.
+Library(jar file) found here: dist/TextFieldAutoCompleter.jar
+Just download the jar, add to the built path and code.
 
 Code Example: There is test class (JFrame) you can refer.
 
