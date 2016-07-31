@@ -5,6 +5,7 @@
  */
 package com.mudassirbit.autocompletor.test;
 
+import com.mudassirbit.autocompletor.MAutoCompleter;
 import com.mudassirbit.autocompletor.MTextFieldAutoCompleter;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ public class TestFrame extends javax.swing.JFrame {
      */
     public TestFrame() {
         initComponents();
-        MTextFieldAutoCompleter mTextFieldAutoCompleter = new MTextFieldAutoCompleter(jTextField1);
+        MAutoCompleter mTextFieldAutoCompleter = new MTextFieldAutoCompleter(jTextField1);
         List<Object> items = new ArrayList<>();
         items.add("Apple");
         items.add("Orange");
