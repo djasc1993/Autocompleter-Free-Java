@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mudassirbit.autocompletor;
+package org.autocompletor.free;
 
 /**
  *
  * @author mudassir
  */
-public class MAutoCompleteException extends RuntimeException{
+public class AutoCompleteException extends RuntimeException{
     String message;
 
-    private MAutoCompleteException() {
+    private AutoCompleteException() {
         
     }
     
-    public MAutoCompleteException(String msg)
+    public AutoCompleteException(String msg)
     {
         this.message = msg;
     }

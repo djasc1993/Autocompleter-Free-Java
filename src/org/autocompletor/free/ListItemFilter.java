@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.mudassirbit.autocompletor;
+package org.autocompletor.free;
 
 import java.util.List;
 
@@ -16,10 +11,11 @@ import java.util.List;
 public interface ListItemFilter {
 
     /**
-     * Implement this method to alter the suggestion filter list. method accepts two parameters and returns the resultant list
+     * Implement this method to alter the suggestion filter list.method accepts two parameters and returns the resultant list
      * @param itemList list of available items . 
      * @param keyword  is the search keyword
+     * @param optionSearch is method for search (Autocompleter.MODE_SEARCH_)
      * @return  the list of resultant item list that shown in suggestion list
      */
-    List<Object> filter(List<Object> itemList, Object keyword);
+    List<Object> filter(List<Object> itemList, Object keyword, int optionSearch);
 }

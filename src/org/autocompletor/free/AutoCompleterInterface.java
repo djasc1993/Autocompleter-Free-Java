@@ -3,38 +3,44 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mudassirbit.autocompletor;
+package org.autocompletor.free;
 
 import java.util.List;
 
 /**
  *
  * @author mudassir Auto completer interface
+ * @modified @djasc1993
  */
-public interface MAutoCompleter {
+public interface AutoCompleterInterface {
 
+    /*************PARAMETERS*************/
+    public static final int MODE_SEARCH_CHAR_INIT = 1;
+    public static final int MODE_SEARCH_CHAR_CONTAINS = 2;
+    public static final int MODE_SEARCH_CHAR_END = 3;
+    
     /**
      * methods that configures the auto completer for the given Component;
      * Currently only text field is implemented. After creating the object you
      * must call this configure method to see the suggestion for the text field
      *
-     * @throws MAutoCompleteException
+     * @throws AutoCompleteException
      */
-    void configure() throws MAutoCompleteException;
+    void configure() throws AutoCompleteException;
 
     /**
      * Returns the number of items that shows in the suggestion list
      *
      * @return
      */
-    int getNumOfItems();
+    int getNumberItems();
 
     /**
      * sets the number of items to be showed in the suggestion list
      *
      * @param numOfItems
      */
-    void setNumOfItems(int numOfItems);
+    void setNumberItems(int numOfItems);
 
     /**
      * Adds list of items to the existing suggestion list; it will append to
@@ -79,14 +85,5 @@ public interface MAutoCompleter {
      *
      * @return
      */
-    boolean isShowSuggestionBoxAtBegin();
 
-    /**
-     * set whether or not initially the suggestion to be shown. i.e if the text
-     * field is empty do we need to show the suggestion list. by default it will
-     * be shown all the existing items
-     *
-     * @param showSuggestionBoxDefault
-     */
-    void setShowSuggestionBoxAtBegin(boolean showSuggestionBoxDefault);
 }
