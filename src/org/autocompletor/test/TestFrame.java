@@ -5,9 +5,11 @@
  */
 package org.autocompletor.test;
 
+import java.awt.Color;
 import org.autocompletor.free.AutoCompleter;
 import org.autocompletor.free.AutoCompleterExtra;
 import org.autocompletor.free.AutoCompleterInterface;
+import org.autocompletor.free.Theme;
 
 /**
  *
@@ -32,7 +34,7 @@ public class TestFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);  
         AutoCompleterExtra.DEBUG = true;
-        autoComplete = new AutoCompleter(jTextField1,null,(Object object_select) -> {
+        autoComplete = new AutoCompleter(jTextField1,new Theme(Color.LIGHT_GRAY, Color.DARK_GRAY),(Object object_select) -> {
                 ((ObjectCustom)  object_select).executeAction();
             //jTextField1.setText("");
             txtAction.setText("Action Select: "+object_select.toString());
