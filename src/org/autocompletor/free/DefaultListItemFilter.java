@@ -25,7 +25,7 @@ class DefaultListItemFilter implements ListItemFilter {
         List<Object> result = new ArrayList<>();
         if(itemList == null || item == null)
             return result;
-        AutoCompleterExtra.pDebug("Search: "+item.toString());
+        //AutoCompleterExtra.pDebug("Search: "+item.toString());
         for(Object itemInList : itemList)
         {
             switch(optionSearch){
@@ -34,8 +34,9 @@ class DefaultListItemFilter implements ListItemFilter {
                         result.add(itemInList);
                     break;
                 case AutoCompleterInterface.MODE_SEARCH_CHAR_CONTAINS:
-                    if(item.toString().isEmpty() || itemInList.toString().toLowerCase().contains(item.toString().toLowerCase()))
+                    if(item.toString().isEmpty() || itemInList.toString().toLowerCase().contains(item.toString().toLowerCase())){
                         result.add(itemInList);
+                    }
                     break;
                 case AutoCompleterInterface.MODE_SEARCH_CHAR_END:
                     if(item.toString().isEmpty() || itemInList.toString().toLowerCase().endsWith(item.toString().toLowerCase()))

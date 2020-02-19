@@ -58,6 +58,31 @@ public class TestFrame extends javax.swing.JFrame {
         autoComplete.addItem(new ObjectCustom("HOME DOS","ejecuta HOME"));
         autoComplete.addItem(new ObjectCustom("HOME UNO","ejecuta HOME"));
         autoComplete.addItem(new ObjectCustom("TOMATO","ejecuta TOMATO"));
+        autoComplete.addItem(new ObjectCustom("APPLE UNO","ejecuta APPLE"));
+        autoComplete.addItem(new ObjectCustom("HOME DOS","ejecuta HOME"));
+        autoComplete.addItem(new ObjectCustom("HOME UNO","ejecuta HOME"));
+        autoComplete.addItem(new ObjectCustom("TOMATO","ejecuta TOMATO"));
+        autoComplete.addItem(new ObjectCustom("APPLE UNO","ejecuta APPLE"));
+        autoComplete.addItem(new ObjectCustom("HOME DOS","ejecuta HOME"));
+        autoComplete.addItem(new ObjectCustom("HOME UNO","ejecuta HOME"));
+        autoComplete.addItem(new ObjectCustom("TOMATO","ejecuta TOMATO"));
+        autoComplete.addItem(new ObjectCustom("APPLE UNO","ejecuta APPLE"));
+        autoComplete.addItem(new ObjectCustom("HOME DOS","ejecuta HOME"));
+        autoComplete.addItem(new ObjectCustom("HOME UNO","ejecuta HOME"));
+        autoComplete.addItem(new ObjectCustom("TOMATO","ejecuta TOMATO"));
+        autoComplete.addItem(new ObjectCustom("APPLE UNO","ejecuta APPLE"));
+        autoComplete.addItem(new ObjectCustom("HOME DOS","ejecuta HOME"));
+        autoComplete.addItem(new ObjectCustom("HOME UNO","ejecuta HOME"));
+        autoComplete.addItem(new ObjectCustom("TOMATO","ejecuta TOMATO"));
+        autoComplete.addItem(new ObjectCustom("APPLE UNO","ejecuta APPLE"));
+        autoComplete.addItem(new ObjectCustom("HOME DOS","ejecuta HOME"));
+        autoComplete.addItem(new ObjectCustom("HOME UNO","ejecuta HOME"));
+        autoComplete.addItem(new ObjectCustom("TOMATO","ejecuta TOMATO"));
+        autoComplete.addItem(new ObjectCustom("APPLE UNO","ejecuta APPLE"));
+        autoComplete.addItem(new ObjectCustom("HOME DOS","ejecuta HOME"));
+        autoComplete.addItem(new ObjectCustom("HOME UNO","ejecuta HOME"));
+        autoComplete.addItem(new ObjectCustom("TOMATO","ejecuta TOMATO"));
+        
         //autoComplete.setNumberItems(15);//optional; we have default one
     }
 
@@ -69,11 +94,12 @@ public class TestFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jLabel2 = new javax.swing.JLabel();
         txtAction = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -82,15 +108,15 @@ public class TestFrame extends javax.swing.JFrame {
 
         jLabel1.setText("Autor:@mudassirbit | Modified: @djasc1993");
 
+        jLabel2.setText("Write a word of the list:");
+
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "APPLE UNO", "HOME DOS", "HOME UNO", "TOMATO" };
+            String[] strings = { "APPLE UNO", "HOME DOS", "HOME UNO", "TOMATO", "APPLE UNO", "HOME DOS", "HOME UNO", "TOMATO", "APPLE UNO", "HOME DOS", "HOME UNO", "TOMATO", "APPLE UNO", "HOME DOS", "HOME UNO", "TOMATO", "APPLE UNO", "HOME DOS", "HOME UNO", "TOMATO", "APPLE UNO", "HOME DOS", "HOME UNO", "TOMATO", "APPLE UNO", "HOME DOS", "HOME UNO", "TOMATO" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
         jList1.setEnabled(false);
         jScrollPane1.setViewportView(jList1);
-
-        jLabel2.setText("Write a word of the list:");
 
         txtAction.setEditable(false);
         txtAction.setText("Action Select:");
@@ -109,45 +135,58 @@ public class TestFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1)
-                            .addComponent(txtAction))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtAction, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox1)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtAction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
 
         pack();
@@ -179,6 +218,7 @@ public class TestFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtAction;

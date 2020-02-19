@@ -1,8 +1,10 @@
 package org.autocompletor.free;
 
+import java.awt.BorderLayout;
 import static org.autocompletor.free.AutoCompleterExtra.pDebug;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,8 +13,10 @@ import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.ListModel;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.border.Border;
 
 
@@ -42,6 +46,7 @@ public class AutoCompleter implements AutoCompleterInterface {
     private static Map<Component, AutoCompleter> map = new HashMap<>();
     private JTextField jTextField;
     private JPanel jPanel;
+    private JScrollPane jScroll;
     private JList jList;
     private AutoCallback callback;
     private int opt_method_search = 2;
@@ -166,7 +171,7 @@ public class AutoCompleter implements AutoCompleterInterface {
     
     @Override
     public void configure() throws AutoCompleteException {
-
+        
         if (this.jTextField == null) {
             throw new AutoCompleteException("JTextField object not set");
         }
@@ -189,31 +194,31 @@ public class AutoCompleter implements AutoCompleterInterface {
         CELL_HEIGHT = (int) jTextField.getSize().getHeight();
         double xPointOfTextField = jTextField.getLocation().getX();
         double yPointOfTextField = jTextField.getLocation().getY();
-
         double heightOfTextField = jTextField.getSize().getHeight();
-
         int x = (int) Math.ceil(xPointOfTextField);
         int y = (int) Math.ceil(yPointOfTextField + heightOfTextField);
 
         jPanel.setLocation((int) (x), (int) (y));
-        jPanel.setSize((int) jTextField.getSize().getWidth(), NUMBER_OF_ITEMS * CELL_HEIGHT);
+        //jPanel.setPreferredSize(new Dimension((int) jTextField.getSize().getWidth(), 5 * CELL_HEIGHT));
+        jPanel.setSize(new Dimension((int) jTextField.getSize().getWidth(), NUMBER_OF_ITEMS * CELL_HEIGHT));
         theme.setColorBackground(jPanel, jList);
-        this.jTextField.getParent().add(jPanel, 2, 0);
-        jPanel.add(jList);
-
-        jList.setSize((int) jTextField.getSize().getWidth(), NUMBER_OF_ITEMS * CELL_HEIGHT);
-
-        jList.setFixedCellWidth((int) jList.getParent().getSize().getWidth() - PANEL_BORDER_SIZE * 2);
-        jList.setFixedCellHeight(CELL_HEIGHT);
-        jList.setLocation(PANEL_BORDER_SIZE, PANEL_BORDER_SIZE);
+        jScroll.setViewportView(jList);
         ListModel defaultListModel = new DefaultListModel();
-        pDebug("dm: " + defaultListModel.getSize());
         jList.setModel(defaultListModel);
         jList.setListData(this.items.toArray());
         jList.setSelectedIndex(0);
-        jList.setVisible(true);
-        pDebug("yList execute: " + jList.getLocation().x);
-        Border listBorder = BorderFactory.createLineBorder(Color.BLACK, PANEL_BORDER_SIZE);
+        //jList.setFixedCellWidth((int) jTextField.getSize().getWidth() - 20);
+        jScroll.setPreferredSize(new Dimension((int)jTextField.getSize().getWidth(), (NUMBER_OF_ITEMS * CELL_HEIGHT) - 10));
+        //jList.setPreferredSize(new Dimension((int)jTextField.getSize().getWidth(), 1 * CELL_HEIGHT));
+        //jList.setFixedCellHeight(CELL_HEIGHT);
+       // jList.setVisibleRowCount(100);
+       // jList.setVisible(true);
+        jList.setLayoutOrientation(JList.VERTICAL);
+        
+        this.jTextField.getParent().add(jPanel, 2, 0);
+        jPanel.add(jScroll, BorderLayout.PAGE_START);
+        
+        Border listBorder = BorderFactory.createLineBorder(this.theme.backgroundPanel, PANEL_BORDER_SIZE);
         jPanel.setBorder(listBorder);
         jPanel.setVisible(false);
     }
@@ -295,7 +300,6 @@ public class AutoCompleter implements AutoCompleterInterface {
             return;
         }
         resultList = listItemFilter.filter(items, jTextField.getText().replace(CURRENT_TEXT.toString(), ""), this.opt_method_search);
-        //jList.removeAll();
         if(resultList.size()>0){
             jList.setListData(toArray(resultList));
             jList.setSelectedIndex(0);
@@ -308,7 +312,10 @@ public class AutoCompleter implements AutoCompleterInterface {
             }
 
             updatedHieght = (int) (updatedHieght * CELL_HEIGHT);
+            
+            jScroll.setPreferredSize(new Dimension((int)jTextField.getSize().getWidth(), updatedHieght - 10));
             jPanel.setSize((int) Math.ceil(jPanel.getSize().getWidth()), updatedHieght);
+            jList.setVisible(true);
             jPanel.setVisible(true);
         }else
             jPanel.setVisible(false);
@@ -342,6 +349,7 @@ public class AutoCompleter implements AutoCompleterInterface {
     private void startComponents() {
         jList = new JList();
         jPanel = new JPanel();
+        jScroll = new JScrollPane();
         resultList = new ArrayList<>();
         this.items = new ArrayList<>();
         listItemFilter = new DefaultListItemFilter();
